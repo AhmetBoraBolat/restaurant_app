@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'view_model/login_view_model.dart';
+import 'view_model/register_view_model.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends LoginViewModel {
+class _RegisterPageState extends RegisterViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,28 +24,25 @@ class _LoginPageState extends LoginViewModel {
                 Padding(
                   padding: const EdgeInsets.only(top: 30),
                   child: Text(
-                    'welcome Back!',
+                    'Create a new account',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                const Text('Please login to your account'),
+                const Text('Please fill in the form to continue'),
                 midSizedBox(),
-                // EMAİL FİELD
                 emailField(context),
                 smalSizedBox(),
-                // PASSWORD FİELD
                 passwordField(),
-                largeSizedBox(),
-                //LOGIN BUTTON
-                loginButton(context),
                 smalSizedBox(),
-                //LOGİN WİTH GOOGLE
+                checkPasswordField(),
+                smalSizedBox(),
+                signUpButton(context),
+                smalSizedBox(),
                 loginWithGoogle(context),
-                //Register BuTTON
-                registerButton(),
+                goTologinButton(),
               ],
             ),
           ),
